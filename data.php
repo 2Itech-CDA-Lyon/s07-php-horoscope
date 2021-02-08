@@ -1,6 +1,7 @@
 <?php
 
 include './models/Horoscope.php';
+include './models/Ressource.php';
 
 $horoscopes = [
     // Bélier
@@ -22,19 +23,16 @@ $horoscopes = [
 ];
 
 $resources = [
-
-    [
-        'src' => 'https://fr.wikipedia.org/wiki/Astrologie',
-        'description' => 'L\'astrologie sur Wikipedia.',
-    ],
-
-    [
-        'src' => 'https://www.amazon.fr/Bible-lAstrologie-Judy-Hall/dp/281320238X/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=bible+astrologie&qid=1599851245&sr=8-1',
-        'description' => 'La bible de l\'astrologie sur Amazon',
-    ],
-
-    [
-        'src' => 'http://astroo.com/',
-        'description' => 'Astroo, le site pour calculer votre propre thème astral',
-    ],
+    new Ressource(
+        'https://fr.wikipedia.org/wiki/Astrologie',
+        'L\'astrologie sur Wikipedia.',
+    ),
+    new Ressource(
+        'https://www.amazon.fr/Bible-lAstrologie-Judy-Hall/dp/281320238X/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=bible+astrologie&qid=1599851245&sr=8-1',
+        'La bible de l\'astrologie sur Amazon',
+    ),
+    new Ressource(
+        'http://astroo.com/',
+        'Astroo, le site pour calculer votre propre thème astral',
+    ),
 ];

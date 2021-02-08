@@ -49,8 +49,8 @@
 
                     <?php foreach($resources as $resource): ?>
                     <li>
-                        <a target="_blank" href="<?= $resource['src'] ?>">
-                            <?= $resource['description'] ?>
+                        <a target="_blank" href="<?= $resource->getSrc() ?>">
+                            <?= $resource->getDescription() ?>
                         </a>
                     </li>
                     <?php endforeach; ?>
