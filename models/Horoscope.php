@@ -1,13 +1,40 @@
 <?php
 
+/**
+ * Represents an individual horoscope
+ */
 class Horoscope
 {
+    /**
+     * @var string
+     */
     private string $name;
+    /**
+     * @var string
+     */
     private string $description;
+    /**
+     * @var string
+     */
     private string $image;
+    /**
+     * @var string
+     */
     private string $startDate;
+    /**
+     * @var string
+     */
     private string $endDate;
 
+    /**
+     * Create a new Horoscope object
+     *
+     * @param string $name
+     * @param string $description
+     * @param string $image
+     * @param string $startDate
+     * @param string $endDate
+     */
     public function __construct(string $name, string $description, string $image, string $startDate, string $endDate) {
         $this->name = $name;
         $this->description = $description;
@@ -16,18 +43,34 @@ class Horoscope
         $this->endDate = $endDate;
     }
 
+    /**
+     * Get the value of name
+     *
+     * @return  string
+     */ 
     public function getName()
     {
         return $this->name;
     }
 
+    /**
+     * Set the value of name
+     *
+     * @param  string  $name
+     *
+     * @return  self
+     */ 
     public function setName(string $name)
     {
         $this->name = $name;
+
+        return $this;
     }
 
     /**
      * Get the value of description
+     *
+     * @return  string
      */ 
     public function getDescription()
     {
@@ -37,14 +80,12 @@ class Horoscope
     /**
      * Set the value of description
      *
+     * @param  string  $description
+     *
      * @return  self
      */ 
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
-        if (strlen($description) > 200) {
-            throw new Error('Horoscope description must be 200 characters or less.');
-        }
-
         $this->description = $description;
 
         return $this;
@@ -52,6 +93,8 @@ class Horoscope
 
     /**
      * Get the value of image
+     *
+     * @return  string
      */ 
     public function getImage()
     {
@@ -61,9 +104,11 @@ class Horoscope
     /**
      * Set the value of image
      *
+     * @param  string  $image
+     *
      * @return  self
      */ 
-    public function setImage($image)
+    public function setImage(string $image)
     {
         $this->image = $image;
 
@@ -72,6 +117,8 @@ class Horoscope
 
     /**
      * Get the value of startDate
+     *
+     * @return  string
      */ 
     public function getStartDate()
     {
@@ -81,9 +128,11 @@ class Horoscope
     /**
      * Set the value of startDate
      *
+     * @param  string  $startDate
+     *
      * @return  self
      */ 
-    public function setStartDate($startDate)
+    public function setStartDate(string $startDate)
     {
         $this->startDate = $startDate;
 
@@ -92,6 +141,8 @@ class Horoscope
 
     /**
      * Get the value of endDate
+     *
+     * @return  string
      */ 
     public function getEndDate()
     {
@@ -101,9 +152,11 @@ class Horoscope
     /**
      * Set the value of endDate
      *
+     * @param  string  $endDate
+     *
      * @return  self
      */ 
-    public function setEndDate($endDate)
+    public function setEndDate(string $endDate)
     {
         $this->endDate = $endDate;
 
