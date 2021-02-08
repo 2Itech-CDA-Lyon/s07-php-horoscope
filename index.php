@@ -33,7 +33,7 @@
                     <li class="sign">
                         <img class="sign-icon" src="<?= $horoscope['image'] ?>" alt="Icône <?= $horoscope['name'] ?>" />
                         <h3 class="sign-name"><?= $horoscope['name'] ?></h3>
-                        <div class="sign-date">21 mars - 19 avr.</div>
+                        <div class="sign-date"><?= $horoscope['startDate'] ?> - <?= $horoscope['endDate'] ?></div>
                         <p class="sign-description">
                             <?= $horoscope['description'] ?>
                         </p>
@@ -46,21 +46,13 @@
             <section id="resources">
                 <h2>Ressources</h2>
                 <ul>
+                    <?php foreach($resources as $resource): ?>
                     <li>
-                        <a target="_blank" href="https://fr.wikipedia.org/wiki/Astrologie">
-                            L'astrologie sur Wikipedia
+                        <a target="_blank" href="<?= $resource['src'] ?>">
+                            <?= $resource['description'] ?>
                         </a>
                     </li>
-                    <li>
-                        <a target="_blank" href="https://www.amazon.fr/Bible-lAstrologie-Judy-Hall/dp/281320238X/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=bible+astrologie&qid=1599851245&sr=8-1">
-                            La bible de l'astrologie sur Amazon
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="http://astroo.com/">
-                            Astroo, le site pour calculer votre propre thème astral
-                        </a>
-                    </li>
+                    <?php endforeach; ?>
                 </ul>
             </section>
         </main>
