@@ -31,11 +31,11 @@
                     
                     <?php foreach ($horoscopes as $horoscope): ?>
                     <li class="sign">
-                        <img class="sign-icon" src="<?= $horoscope['image'] ?>" alt="Icône <?= $horoscope['name'] ?>" />
-                        <h3 class="sign-name"><?= $horoscope['name'] ?></h3>
-                        <div class="sign-date"><?= $horoscope['startDate'] ?> - <?= $horoscope['endDate'] ?></div>
+                        <img class="sign-icon" src="<?= $horoscope->getImage() ?>" alt="Icône <?= $horoscope->getName() ?>" />
+                        <h3 class="sign-name"><?= $horoscope->getName() ?></h3>
+                        <div class="sign-date"><?= $horoscope->getStartDate() ?> - <?= $horoscope->getEndDate() ?></div>
                         <p class="sign-description">
-                            <?= $horoscope['description'] ?>
+                            <?= $horoscope->getDescription() ?>
                         </p>
                     </li>
                     <?php endforeach; ?>
@@ -46,6 +46,7 @@
             <section id="resources">
                 <h2>Ressources</h2>
                 <ul>
+
                     <?php foreach($resources as $resource): ?>
                     <li>
                         <a target="_blank" href="<?= $resource['src'] ?>">
@@ -53,6 +54,7 @@
                         </a>
                     </li>
                     <?php endforeach; ?>
+                    
                 </ul>
             </section>
         </main>
